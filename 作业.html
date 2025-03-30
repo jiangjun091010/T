@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>趣味作业清单</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+KuaiLe&display=swap');
+        
+        body {
+            font-family: 'ZCOOL KuaiLe', cursive;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #FFF5E6;
+            background-image: radial-gradient(#FFD700 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+            border: 3px dashed #FF9E7D;
+            position: relative;
+            overflow: hidden;
+        }
+        .container::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 2px solid #89CFF0;
+            border-radius: 25px;
+            z-index: -1;
+            animation: rainbow 8s linear infinite;
+        }
+        @keyframes rainbow {
+            0% { border-color: #89CFF0; }
+            25% { border-color: #98FB98; }
+            50% { border-color: #FFD700; }
+            75% { border-color: #FFA07A; }
+            100% { border-color: #89CFF0; }
+        }
+        h1 {
+            color: #FF6B6B;
+            text-align: center;
+            margin-bottom: 30px;
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 2.5em;
+            text-shadow: 3px 3px 0px #FFD700;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        h1::after {
+            content: "✏️ 📚 🎨";
+            display: block;
+            font-size: 0.6em;
+            margin-top: 5px;
+        }
+        .subject {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 8px solid;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+        }
+        .subject:hover {
+            transform: translateY(-5px);
+            box-shadow: 8px 8px 20px rgba(0,0,0,0.15);
+        }
+        .chinese { border-color: #FF6B6B; }
+        .math { border-color: #4ECDC4; }
+        .english { border-color: #FFD166; }
+        .biology { border-color: #06D6A0; }
+        .geography { border-color: #118AB2; }
+        .history { border-color: #073B4C; }
+        .moral { border-color: #FF9E7D; }
+        .physics { border-color: #A78AFF; }
+        .subject-title {
+            font-weight: bold;
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            padding: 8px 15px;
+            border-radius: 50px;
+            display: inline-block;
+            position: relative;
+            left: -25px;
+            box-shadow: 3px 3px 5px rgba(0,0,0,0.2);
+        }
+        .chinese .subject-title { background-color: #FF6B6B; }
+        .math .subject-title { background-color: #4ECDC4; }
+        .english .subject-title { background-color: #FFD166; }
+        .biology .subject-title { background-color: #06D6A0; }
+        .geography .subject-title { background-color: #118AB2; }
+        .history .subject-title { background-color: #073B4C; }
+        .moral .subject-title { background-color: #FF9E7D; }
+        .physics .subject-title { background-color: #A78AFF; }
+        .task {
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            border-radius: 10px;
+            background-color: rgba(255,255,255,0.7);
+            position: relative;
+            transition: all 0.2s ease;
+        }
+        .task:hover {
+            background-color: rgba(255,255,255,0.9);
+            transform: scale(1.01);
+        }
+        .task::before {
+            content: "👉";
+            margin-right: 10px;
+        }
+        .highlight {
+            background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        .signature {
+            font-style: italic;
+            color: #666;
+            display: inline-block;
+            padding: 3px 10px;
+            background-color: #FFF5E6;
+            border-radius: 5px;
+            border: 1px dashed #FF9E7D;
+        }
+        .book-title {
+            color: #118AB2;
+            font-weight: bold;
+            text-decoration: underline wavy #FFD700;
+        }
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 5px;
+        }
+        .decoration {
+            position: absolute;
+            font-size: 2em;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        .star1 { top: 20px; right: 30px; color: #FFD700; }
+        .star2 { bottom: 50px; left: 40px; color: #89CFF0; }
+        .heart { bottom: 30px; right: 50px; color: #FF6B6B; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="decoration star1">⭐</div>
+        <div class="decoration star2">🌟</div>
+        <div class="decoration heart">❤️</div>
+        
+        <h1>趣味作业清单</h1>
+        
+        <div class="subject chinese">
+            <div class="subject-title"><span class="emoji">📚</span>语文作业</div>
+            <div class="task">1. 第二单元小随笔 <span style="color:#FF6B6B;float:right;">✍️</span></div>
+            <div class="task">2. 摘抄<span class="book-title">《经典常谈》（朱自清）</span>或<span class="book-title">《钢铁是怎样炼成的》（奥斯特洛夫斯基）</span>中的好词好句或经典片段或读后感想或批注 <span style="color:#118AB2;float:right;">📖</span></div>
+            <div class="task">3. 抄写一篇<span class="highlight">满分作文</span> <span style="color:#FFD700;float:right;">🏆</span></div>
+            <div class="task">4. 《桃花源记》课时练（需完成并附上翻译） <span style="color:#06D6A0;float:right;">🌸</span></div>
+        </div>
+        
+        <div class="subject math">
+            <div class="subject-title"><span class="emoji">🧮</span>数学作业</div>
+            <div class="task">同步学与练：<span class="highlight">"一次函数的性质"</span>部分 <span style="color:#4ECDC4;float:right;">📈</span></div>
+        </div>
+        
+        <div class="subject english">
+            <div class="subject-title"><span class="emoji">🌎</span>英语作业</div>
+            <div class="task">1. 课本35页短文（3a）<span class="highlight">一英一汉</span>翻译 <span style="color:#FFD166;float:right;">🔠</span></div>
+            <div class="task">2. 人教版八年级下册第5单元单词（黑体+白体）<span class="highlight">一英一汉</span> <span style="color:#A78AFF;float:right;">📝</span></div>
+        </div>
+        
+        <div class="subject biology">
+            <div class="subject-title"><span class="emoji">🔬</span>生物作业</div>
+            <div class="task">1. 完成作业本相应内容 <span style="color:#06D6A0;float:right;">🌱</span></div>
+            <div class="task">2. 考试报第10、11版练习 <span style="color:#073B4C;float:right;">📰</span></div>
+        </div>
+        
+        <div class="subject geography">
+            <div class="subject-title"><span class="emoji">🌍</span>地理作业</div>
+            <div class="task">1. 《中考冲刺》44-86页：<span class="highlight">常考点拨</span>和<span class="highlight">知识点背会</span> <span style="color:#118AB2;float:right;">🗺️</span></div>
+            <div class="task"><span class="signature">*需家长签字确认</span> <span style="color:#FF9E7D;float:right;">✏️</span></div>
+            <div class="task">2. 完成2025年河北省学业水平综合演练卷（一）和（二） <span style="color:#073B4C;float:right;">📋</span></div>
+        </div>
+        
+        <div class="subject history">
+            <div class="subject-title"><span class="emoji">🏛️</span>历史作业</div>
+            <div class="task">课时练（跟上当前教学进度） <span style="color:#073B4C;float:right;">⏳</span></div>
+        </div>
+        
+        <div class="subject moral">
+            <div class="subject-title"><span class="emoji">⚖️</span>道德与法治作业</div>
+            <div class="task">8道题<span class="highlight">写两遍</span> <span style="color:#FF9E7D;float:right;">✍️✍️</span></div>
+        </div>
+        
+        <div class="subject physics">
+            <div class="subject-title"><span class="emoji">⚛️</span>物理作业</div>
+            <div class="task">课时练（跟上当前教学进度） <span style="color:#A78AFF;float:right;">🔭</span></div>
+        </div>
+        
+        <div style="text-align:center; margin-top:30px; font-size:0.9em; color:#666;">
+            🎉 加油完成作业！完成后奖励自己一颗小星星 ⭐
+        </div>
+    </div>
+</body>
+</html>
